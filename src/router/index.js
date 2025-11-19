@@ -4,7 +4,7 @@ import ProjectsView from '../views/ProjectsView.vue'
 import AboutView from '../views/AboutView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/'),
   routes: [
     {
       path: '/resume',
