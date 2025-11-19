@@ -38,7 +38,7 @@
           run: npm run build
 
         - name: Copy CNAME into dist
-          run: cp public/CNAME dist/CNAME
+          run: cp CNAME dist/CNAME
 
         - name: Setup Pages
           uses: actions/configure-pages@v5
