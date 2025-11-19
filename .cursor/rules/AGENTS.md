@@ -142,9 +142,7 @@ Example:
 ## GitHub Pages Deployment
 
 - Ensure the Vite config supports GitHub Pages.
-- The `CNAME` file must be placed in the `/public` folder (e.g., `public/CNAME`).
-- Vite automatically copies files from `public/` to the root of `dist/` during build, ensuring the `CNAME` file is included in the build output.
-- The file must contain:
+- Output must include a `CNAME` file containing:
   ```
   samuelstidham.me
   ```
