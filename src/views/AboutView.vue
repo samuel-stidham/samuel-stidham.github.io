@@ -1,5 +1,6 @@
 <script setup>
 import profileImage from '../assets/images/samuel-stidham.jpg'
+import SocialLinks from '../components/SocialLinks.vue'
 </script>
 
 <template>
@@ -30,6 +31,7 @@ import profileImage from '../assets/images/samuel-stidham.jpg'
           <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 text-center">
             Samuel Stidham
           </h2>
+          <SocialLinks />
         </div>
       </div>
 
