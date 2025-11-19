@@ -99,7 +99,7 @@ import { resumeData } from '../data/resume.js'
           </h2>
           <ul class="space-y-2">
             <li v-for="(skill, index) in resumeData.skills" :key="index">
-              <strong class="text-gray-900 dark:text-white">{{ skill.title }}:</strong> 
+              <strong class="text-gray-900 dark:text-white">{{ skill.title }}:&nbsp;</strong> 
               <span class="text-gray-700 dark:text-gray-300">{{ skill.list }}</span>
             </li>
           </ul>
