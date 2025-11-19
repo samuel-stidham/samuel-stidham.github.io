@@ -48,6 +48,12 @@ jobs:
       
       - name: Create 404.html for SPA routing
         run: cp dist/index.html dist/404.html
+
+      - name: Copy favicon + manifest assets
+        run: |
+          cp public/*.png dist/
+          cp public/*.ico dist/
+          cp public/site.webmanifest dist/
   
       - name: Setup Pages
         uses: actions/configure-pages@v5
