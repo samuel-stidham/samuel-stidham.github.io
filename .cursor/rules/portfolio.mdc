@@ -1,0 +1,78 @@
+---
+description: Core rules for the resume + portfolio Vite + Vue project
+globs:
+  - "src/**/*"
+  - "index.html"
+alwaysApply: true
+---
+
+# Resume + Portfolio Site – Cursor Rules
+
+> **Note:** For detailed setup instructions, see `AGENTS.md`. This file provides essential context for file-level work.
+
+## Tech & Stack
+
+- This project uses **Vite + Vue** with **vanilla JavaScript** only.
+- Do **not** introduce TypeScript unless explicitly requested.
+- Use **Vue Router** for navigation between pages like `/resume`, `/projects`, and `/about`.
+- Styling must be done primarily with **Tailwind CSS**. Use custom CSS only when Tailwind cannot express something cleanly.
+- Prefer Tailwind utility classes, including responsive (`md:`, `lg:` etc.) and dark mode (`dark:`) variants.
+
+## Structure
+
+- Keep separate views/components for:
+  - Resume (e.g., `src/views/ResumeView.vue`)
+  - Projects (e.g., `src/views/ProjectsView.vue`)
+  - About (e.g., `src/views/AboutView.vue`)
+- Keep resume content and project data separate from presentation logic where reasonable.
+- Use Vue Single File Components (SFCs) with `<script setup>` and `<style scoped>` when additional CSS is needed.
+
+## Dark / Light Theme
+
+- Implement a **global dark/light theme toggle** that:
+  - Applies a `dark` class at the root level (e.g., on `<html>` or `<body>` or the Vue root wrapper).
+  - Uses Tailwind's `dark:` variants for styling.
+- The theme should apply across all routes.
+- Theme state may be persisted in `localStorage` as long as the implementation remains simple.
+
+### Theme Toggle Icons
+
+**Note:** Font Awesome will be installed manually. Use the exact classes below.
+
+**Light mode (left side):**
+```html
+<i class="fa-sharp-duotone fa-regular fa-sun-bright"></i>
+```
+
+**Dark mode (right side):**
+```html
+<i class="fa-sharp-duotone fa-regular fa-moon-star"></i>
+```
+
+- The toggle must clearly indicate the current mode and feel responsive and smooth (subtle transitions are preferred, but keep the implementation simple).
+
+## Projects Data
+
+- Projects should be defined in a dedicated **data file** (e.g., `src/data/projects.js`).
+- Each project is an object with consistent fields: `title`, `description`, `techStack`, `links`, `tags` (optional).
+- The Projects view must **render from this data**, so adding a project means adding data, not changing layout code.
+- Layout for projects should be built with Tailwind utility classes (cards, grids, spacing, etc.).
+
+## Styling
+
+- Use Tailwind utility classes for spacing, typography, colors, layout (flex, grid), and responsive behavior.
+- Only introduce additional CSS when Tailwind cannot reasonably handle the requirement.
+- Maintain a clean, professional look appropriate for a resume and portfolio.
+
+## Deployment
+
+- Site is deployed to **GitHub Pages** with custom domain `samuelstidham.me`.
+- Build output must include a `CNAME` file. See `AGENTS.md` for detailed deployment requirements.
+
+## Agent Behavior
+
+- When generating or editing code:
+  - Follow the architecture and constraints above.
+  - Prefer readable, maintainable code with clear structure.
+  - Use Tailwind utility classes for styling by default.
+  - Provide **full file contents** when making substantial changes, not just small fragments, unless explicitly asked otherwise.

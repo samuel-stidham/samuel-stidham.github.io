@@ -1,0 +1,116 @@
+---
+description: Rules for GitHub Pages deployment via Vite + Vue + GitHub Actions
+globs:
+  - "vite.config.js"
+  - ".github/workflows/**/*"
+alwaysApply: false
+---
+
+# GitHub Pages Deployment Rules
+
+This rule file defines how the project must be deployed to **GitHub Pages** using a GitHub Actions workflow. These rules ensure that Cursor sets up and maintains the correct configuration for deploying a Vite-built project under the custom domain **samuelstidham.me**.
+
+## Vite Configuration
+
+### Base Setting
+
+- Since this project is deployed to a **custom domain**, the Vite `base` must be `'/'`.
+- Cursor must ensure that `vite.config.js` contains the correct base setting or omits it entirely (defaulting to `/`).
+
+Example:
+
+```js
+// vite.config.js
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [vue(), tailwindcss()],
+  base: '/', // Required for GitHub Pages + custom domain
+})
+```
+
+## GitHub Pages Workflow
+
+Cursor must ensure that the project contains a GitHub Actions workflow for deployment at: `.github/workflows/deploy.yml`
+
+This workflow should:
+
+- Trigger on push to `main`
+- Build the Vite project
+- Upload the `dist` folder as an artifact
+- Deploy the built output to GitHub Pages
+
+### Required workflow
+
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+## CNAME Requirement
+
+- The `CNAME` file exists in the `/public` folder (e.g., `public/CNAME`).
+- Vite automatically copies files from `public/` to the root of `dist/` during build, ensuring the `CNAME` file is included in the build output.
+- The file must contain:
+
+```text
+samuelstidham.me
+```
+
+Cursor must **not** modify `CNAME` unless explicitly instructed.
+
+## Agent Behavior
+
+- When editing deployment-related files, Cursor must show **full file contents**.
+- Cursor must not modify unrelated project files while applying these rules.
+- Cursor must NOT add a `base` setting meant for repository-based deployments (e.g., `/repo-name/`), since this project uses a custom domain.
