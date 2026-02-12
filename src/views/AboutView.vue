@@ -1,7 +1,6 @@
 <script setup>
 import profileImage from '../assets/images/samuel-stidham.jpg'
 import SocialLinks from '../components/SocialLinks.vue'
-import { skillsAndTools } from '../data/skills-and-tools.js'
 </script>
 
 <template>
@@ -41,15 +40,6 @@ import { skillsAndTools } from '../data/skills-and-tools.js'
               solutions. I'm deeply passionate about Computer Science and Mathematics, and I spend most of my time
               designing clean architectures, automating workflows, and solving complex engineering problems.
             </p>
-
-            <div class="mb-8">
-              <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Tools & Technologies</h2>
-              <ul class="space-y-3 text-gray-700 dark:text-gray-300">
-                <li v-for="skill in skillsAndTools" :key="skill.title">
-                  <strong class="text-gray-900 dark:text-gray-100">{{ skill.title }}:</strong> {{ skill.list }}
-                </li>
-              </ul>
-            </div>
 
             <div class="mb-8">
               <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Interests</h2>
