@@ -18,14 +18,14 @@ const links = [
 
 <template>
   <!-- 3-column grid, evenly spaced, fits sidebar properly -->
-  <div class="grid grid-cols-3 gap-4 mt-5 justify-items-center px-2">
+  <div class="grid grid-cols-3 gap-3 mt-5 justify-items-center px-2">
     <a
       v-for="item in links"
       :key="item.href"
       :href="item.href"
       target="_blank"
       rel="noopener noreferrer"
-      class="flex items-center justify-center w-10 h-10 text-xl text-white
+      class="flex items-center justify-center w-8 h-8 text-lg text-white
              bg-neutral-700 border-2 border-neutral-700 rounded-full
              transition-colors hover:bg-slate-100 hover:text-neutral-700
              dark:hover:bg-gray-200 dark:hover:text-gray-900"
