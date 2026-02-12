@@ -3,8 +3,8 @@ export const resumeData = {
     name: 'Samuel Stidham'
   },
   summary: [
-    'Results-driven Software Engineer with 10+ years of experience in full-stack development, specializing in backend technologies, CI/CD automation, and cloud-native solutions.',
-    'Proven problem-solver and Agile leader with expertise in optimizing software performance.'
+    'Software Engineer with 12 years of professional experience who returned to school for a CS degree to master the theory behind the code. Specialize in full-stack development, backend technologies, CI/CD automation, and cloud-native solutions—with particular expertise in unglamorous, high-stakes migrations and refactoring legacy chaos into stable systems.',
+    'Results-driven problem-solver and Agile leader with proven expertise in optimizing software performance and building scalable architectures.'
   ],
   skills: [
     {
