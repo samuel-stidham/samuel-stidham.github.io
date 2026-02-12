@@ -16,7 +16,7 @@ import SocialLinks from '../components/SocialLinks.vue'
 
       <div class="flex gap-8">
         <!-- Profile Card - Desktop (left sidebar) -->
-        <aside class="hidden lg:block flex-shrink-0 w-48">
+        <aside class="hidden lg:block shrink-0 w-48">
           <div
             class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-6 sticky top-24 flex flex-col items-center">
             <div class="w-32 h-32 rounded-full overflow-hidden shadow-lg ring-4 ring-gray-200 dark:ring-gray-700 mb-4">

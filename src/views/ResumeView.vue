@@ -45,7 +45,7 @@ import { resumeData } from '../data/resume.js'
 
       <div class="flex gap-8">
         <!-- Table of Contents - Desktop (left sidebar) -->
-        <aside class="hidden lg:block flex-shrink-0 w-48">
+        <aside class="hidden lg:block shrink-0 w-48">
           <nav class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 sticky top-24">
             <h2 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Contents</h2>
             <ul class="space-y-2 text-sm">
