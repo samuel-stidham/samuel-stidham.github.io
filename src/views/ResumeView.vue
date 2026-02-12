@@ -4,7 +4,7 @@ import { resumeData } from '../data/resume.js'
 
 <template>
   <div class="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-gray-100">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
       <header class="mb-12">
         <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-2">
           {{ resumeData.contact.name }}
@@ -43,41 +43,42 @@ import { resumeData } from '../data/resume.js'
         </ul>
       </nav>
 
-      <!-- Table of Contents - Desktop (floating left sidebar) -->
-      <nav class="hidden lg:block fixed left-6 top-1/2 -translate-y-1/2 z-10">
-        <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 w-48">
-          <h2 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Contents</h2>
-          <ul class="space-y-2 text-sm">
-            <li v-if="resumeData.summary && resumeData.summary.length > 0">
-              <a href="#summary" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                Career Summary
-              </a>
-            </li>
-            <li v-if="resumeData.skills && resumeData.skills.length > 0">
-              <a href="#skills" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                Skills Summary
-              </a>
-            </li>
-            <li v-if="resumeData.experience && resumeData.experience.length > 0">
-              <a href="#experience" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                Experience
-              </a>
-            </li>
-            <li v-if="resumeData.education && resumeData.education.length > 0">
-              <a href="#education" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                Education
-              </a>
-            </li>
-            <li v-if="resumeData.certifications && resumeData.certifications.length > 0">
-              <a href="#certifications" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                Certifications
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <div class="flex gap-8">
+        <!-- Table of Contents - Desktop (left sidebar) -->
+        <aside class="hidden lg:block flex-shrink-0 w-48">
+          <nav class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 sticky top-24">
+            <h2 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Contents</h2>
+            <ul class="space-y-2 text-sm">
+              <li v-if="resumeData.summary && resumeData.summary.length > 0">
+                <a href="#summary" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Career Summary
+                </a>
+              </li>
+              <li v-if="resumeData.skills && resumeData.skills.length > 0">
+                <a href="#skills" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Skills Summary
+                </a>
+              </li>
+              <li v-if="resumeData.experience && resumeData.experience.length > 0">
+                <a href="#experience" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Experience
+                </a>
+              </li>
+              <li v-if="resumeData.education && resumeData.education.length > 0">
+                <a href="#education" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Education
+                </a>
+              </li>
+              <li v-if="resumeData.certifications && resumeData.certifications.length > 0">
+                <a href="#certifications" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Certifications
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
 
-      <main>
+      <main class="flex-1 min-w-0">
         <!-- Career Summary -->
         <section id="summary" class="mb-10 scroll-mt-8" v-if="resumeData.summary && resumeData.summary.length > 0">
           <h2 class="text-3xl font-semibold text-gray-900 dark:text-white border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-4">
@@ -177,6 +178,7 @@ import { resumeData } from '../data/resume.js'
           </div>
         </section>
       </main>
+      </div>
     </div>
   </div>
 </template>

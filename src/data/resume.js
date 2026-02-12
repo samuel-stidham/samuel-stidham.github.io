@@ -42,25 +42,13 @@ export const resumeData = {
   ],
   experience: [
     {
-      title: 'Bayer',
-      role: 'Technical Delivery Lead (Contract)',
-      date: 'Sept 2025 – October 2025',
-      bullets: [
-        'Guided cross-functional engineering teams using a servant leadership approach to foster accountability and technical ownership.',
-        'Championed the "You Build It, You Own It" mindset by cataloging all technology assets within ServiceNow for full lifecycle visibility.',
-        'Partnered with developers and stakeholders to align delivery priorities and ensure transparent process governance.',
-        'Designed and implemented Excel-based tracking and reporting tools to monitor technical initiatives and ensure compliance.'
-      ]
-    },
-    {
       title: 'WP Engine',
       role: 'Software Engineer',
       date: 'January 2022 – August 2025',
       bullets: [
-        'Managed and maintained over 20 cloud-native services (Go, PHP, Python) on GCP, leveraging Kubernetes, Docker, and Jenkins CI/CD pipelines.',
-        'Executed a critical DNS migration, programmatically transferring over 1 million domains to new Cloudflare zones using an idempotent script.',
-        'Oversaw large-scale WordPress hosting solutions, managing Cloudflare WAF/CDN security, SSL certificates, and DNS services.',
-        'Drove agile methodologies, led technical planning sessions, and actively participated in the engineering hiring process to build a diverse and effective team.'
+        'Executed a critical Cloudflare migration by developing an idempotent PHP automation (Symfony Console) to transfer 1M+ custom hostnames to new shared zones, utilizing AWS Lambda for scheduled operations.',
+        'Managed and maintained a core Go service (chi-based API) responsible for the lifecycle of Cloudflare custom certificates for multisite hosting, reducing certificate overhead and simplifying customer configurations.',
+        'Enhanced a Ruby on Rails domain-mapping service acting as the source of truth for custom records by implementing intelligent caching, multi-cloud networking, and DNS-based health checks to ensure correctness and prevent unsafe configurations.'
       ]
     },
     {
@@ -68,39 +56,19 @@ export const resumeData = {
       role: 'Senior PHP Programmer',
       date: 'February 2019 – January 2022',
       bullets: [
-        'Engineered and maintained a portfolio of approximately 80 internal web applications using the Symfony (PHP) framework within a TDD environment.',
-        'Built modern frontends using AngularJS and Vue.js, designing and implementing secure roles and permissions systems.',
-        'Integrated applications with diverse backend systems, including MySQL, AS/400, and Active Directory, applying OOP and MVC principles.'
+        'Designed and built a core Symfony (PHP) application composed of modular bundles supporting internal logging and freight workflows, including routing and risk management, using test-driven development to ensure robust, business-critical logging that enabled event to support international height operations.',
+        'Led a modernization effort migrating legacy systems from Symfony to Laravel and from AngularJS to Vue.js, including transitioning server-rendered templates from Bootstrap 3 to 5, improving maintainability, development velocity, and long-term platform scalability.',
+        'Implemented enterprise authentication and authorization by integrating LDAP and Active Directory, managing security protocol access aligned with corporate identity management and permission controls.'
       ]
     },
     {
-      title: 'Webbed Sphere Inc',
+      title: 'Webbed Spine Inc.',
       role: 'Senior Programmer',
-      date: 'November 2018 – February 2019',
+      date: 'November 2013 – February 2018; November 2018 – February 2019',
       bullets: [
-        'Architected and developed PHP SDKs for the Walmart and Sellbrite APIs using a TDD approach.',
-        'Led the migration of internal administrative tools to the Laravel framework.',
-        'Spearheaded a large-scale PostgreSQL database refactoring, normalizing a complex schema (700+ tables) to the third normal form to improve efficiency.'
-      ]
-    },
-    {
-      title: 'Cosby Harrison Company',
-      role: 'Software Development Manager',
-      date: 'April 2018 – October 2018',
-      bullets: [
-        'Directed an agile team of 4 programmers, managing software projects and serving as the primary liaison between the team and stakeholders.',
-        'Drove the complete refactoring and modernization of legacy Perl web applications to improve scalability and performance.',
-        'Ensured high code quality by establishing best practices and conducting rigorous code reviews.'
-      ]
-    },
-    {
-      title: 'Webbed Sphere Inc',
-      role: 'Senior Programmer',
-      date: 'November 2013 – April 2018',
-      bullets: [
-        'Led full-stack development of a core e-commerce application using AngularJS, PHP, and Node.js.',
-        'Executed a massive legacy modernization project, upgrading a 7,500+ file codebase from PHP 4 to PHP 7.0+ and refactoring the architecture to MVC.',
-        'Integrated essential third-party APIs for e-commerce (eBay, Amazon), shipping (UPS), and cloud storage.'
+        'Designed and built a buylist platform (online shopping cart) using a PHP REST backend and AngularJS frontend to manage large-scale operations, streamlining the acquisition and supply chain logistics.',
+        'Developed an idempotent PHP automation using Rackspace\'s paginated APIs to reprocess and optimize product images in-place, reducing storage usage from 40GB to under 10GB significantly.',
+        'Continued development and modernization of a large-scale e-commerce platform, including refactoring legacy PHP cache architecture and building PHP API integrations for third-party marketplaces such as Walmart, Sellbrite, eBay, and Amazon.'
       ]
     }
   ],
