@@ -101,7 +101,7 @@ const isActive = (path) => {
           <div class="flex items-center space-x-3">
             <!-- Sun icon (always visible, highlighted in light mode) -->
             <i
-              class="fa-sharp-duotone fa-regular fa-sun-bright text-lg transition-opacity transition-colors"
+              class="fa-sharp-duotone fa-regular fa-sun-bright text-lg transition-colors"
               :class="theme === 'light' ? 'opacity-100 text-yellow-400' : 'opacity-50 text-gray-500 dark:text-gray-400'"
             ></i>
 
@@ -122,7 +122,7 @@ const isActive = (path) => {
 
             <!-- Moon icon (always visible, highlighted in dark mode) -->
             <i
-              class="fa-sharp-duotone fa-regular fa-moon-star text-lg transition-opacity transition-colors"
+              class="fa-sharp-duotone fa-regular fa-moon-star text-lg transition-colors"
               :class="theme === 'dark' ? 'opacity-100 text-indigo-400' : 'opacity-50 text-gray-500 dark:text-gray-400'"
             ></i>
           </div>
