@@ -1,5 +1,6 @@
 <script setup>
 import { resumeData } from '../data/resume.js'
+import { skillsAndTools } from '../data/skills-and-tools.js'
 </script>
 
 <template>
@@ -20,7 +21,7 @@ import { resumeData } from '../data/resume.js'
               Career Summary
             </a>
           </li>
-          <li v-if="resumeData.skills && resumeData.skills.length > 0">
+          <li v-if="skillsAndTools && skillsAndTools.length > 0">
             <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
               Skills Summary
             </a>
@@ -54,7 +55,7 @@ import { resumeData } from '../data/resume.js'
                   Career Summary
                 </a>
               </li>
-              <li v-if="resumeData.skills && resumeData.skills.length > 0">
+              <li v-if="skillsAndTools && skillsAndTools.length > 0">
                 <a href="#skills" class="block text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                   Skills Summary
                 </a>
@@ -94,12 +95,12 @@ import { resumeData } from '../data/resume.js'
         </section>
 
         <!-- Skills Summary -->
-        <section id="skills" class="mb-10 scroll-mt-8" v-if="resumeData.skills && resumeData.skills.length > 0">
+        <section id="skills" class="mb-10 scroll-mt-8" v-if="skillsAndTools && skillsAndTools.length > 0">
           <h2 class="text-3xl font-semibold text-gray-900 dark:text-white border-b-2 border-gray-200 dark:border-gray-700 pb-2 mb-4">
             Skills Summary
           </h2>
           <ul class="space-y-2">
-            <li v-for="(skill, index) in resumeData.skills" :key="index">
+            <li v-for="(skill, index) in skillsAndTools" :key="index">
               <strong class="text-gray-900 dark:text-white">{{ skill.title }}:&nbsp;</strong> 
               <span class="text-gray-700 dark:text-gray-300">{{ skill.list }}</span>
             </li>

@@ -1,6 +1,7 @@
 <script setup>
 import profileImage from '../assets/images/samuel-stidham.jpg'
 import SocialLinks from '../components/SocialLinks.vue'
+import { skillsAndTools } from '../data/skills-and-tools.js'
 </script>
 
 <template>
@@ -42,52 +43,18 @@ import SocialLinks from '../components/SocialLinks.vue'
             </p>
 
             <div class="mb-8">
-              <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Technologies & Tools</h2>
-              <p class="text-gray-700 dark:text-gray-300 mb-4">
-                My work spans a wide range of technologies including:
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">PHP</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">JavaScript</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Go</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Python</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">C/C++</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Zig</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Ruby</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Rails</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Django</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Laravel</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Symfony</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Kubernetes</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">GCP</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">Cloudflare</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">LaTeX</span>
-                <span
-                  class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">CI/CD</span>
-              </div>
+              <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Tools & Technologies</h2>
+              <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                <li v-for="skill in skillsAndTools" :key="skill.title">
+                  <strong class="text-gray-900 dark:text-gray-100">{{ skill.title }}:</strong> {{ skill.list }}
+                </li>
+              </ul>
             </div>
 
             <div class="mb-8">
-              <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Personal Interests</h2>
+              <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Interests</h2>
               <p class="text-gray-700 dark:text-gray-300 mb-4">
-                Outside of engineering, I'm a lifelong fan of video games including Dragon Quest, The Legend of Zelda,
-                Hollow Knight, Stardew Valley, Minecraft, and 7 Days to Die. I love reading, writing, and listening to
-                heavy metal and death metal while building things.
+                Story-driven games and RPGs, tabletop role-playing games, animation, and reading and writing fiction. I'm a lifelong fan of video games including Dragon Quest, The Legend of Zelda, Hollow Knight, Stardew Valley, Minecraft, and 7 Days to Die. I love listening to heavy metal and death metal while building things.
               </p>
               <p class="text-gray-700 dark:text-gray-300">
                 My personal projects often explore NLP, LLM integrations, and developer tooling.
