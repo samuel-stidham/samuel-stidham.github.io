@@ -25,43 +25,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Set up Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: '20'
-          cache: 'npm'
+      # The site is one static page that links to samuelstidham.me.
+      # It must never ship a CNAME file. A custom domain on this
+      # repository redirects every project site under the account.
+      - name: Refuse a CNAME file
+        run: test ! -e site/CNAME
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Copy CNAME file
-        run: |
-          if [ -f "public/CNAME" ]; then
-            cp public/CNAME dist/CNAME
-            echo "CNAME file copied to dist/"
-          else
-            echo "Warning: public/CNAME not found"
-          fi
-      
-      - name: Create 404.html for SPA routing
-        run: cp dist/index.html dist/404.html
-
-      - name: Copy favicon + manifest assets
-        run: |
-          cp public/*.png dist/
-          cp public/*.ico dist/
-          cp public/site.webmanifest dist/
-  
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: './dist'
+          path: './site'
 
       - name: Deploy to GitHub Pages
         id: deployment
